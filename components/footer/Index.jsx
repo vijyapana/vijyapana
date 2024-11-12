@@ -15,7 +15,7 @@ const soicalLinks = [
   { 
     id:2,
     icon:<FaLinkedin/>,
-    link:"https://www.linkedin.com/in/vijyapana-advertisements-1b119832b/"
+    link:"https://www.linkedin.com/company/vijyapana/"
   },
   
 ]
