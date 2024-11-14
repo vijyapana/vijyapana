@@ -71,7 +71,11 @@ function Navbar() {
           <h1 className='font-medium text-gray-700 flex items-center gap-x-1'><FaHandPointRight/>{s.name}</h1>
             <div className='ml-2'>
               {s.dropdownpoints.map((p)=>{
-                return <p key={uuid()} className='text-sm my-2'>{p}</p>
+                return (
+                <p key={uuid()} className='text-sm my-2'>{p}
+                {/* <Link href={`${s.url}/${p.toLowerCase().replace(/ /g, '-')}`}>{p}</Link> */}
+                </p>
+              );
               })}
             </div>
           </div>
