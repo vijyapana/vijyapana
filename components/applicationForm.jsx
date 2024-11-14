@@ -24,8 +24,9 @@ const Form = () => {
 
     // Log the form data (optional)
     const formValues = Object.fromEntries(formData.entries());
+    console.log(formValues);
     
-    fetch('https://sheetdb.io/api/v1/sahs3bkkugx22', {
+    fetch('https://sheetdb.io/api/v1/1vw7oflx4n60u', {
       method: 'POST',
       headers: {
           'Accept': 'application/json',
@@ -51,7 +52,7 @@ const Form = () => {
         <Label>Name *</Label>
         <Input
           type="text"
-          name="name"
+          name="NAME"
           placeholder="First and Last Name"
           required
         />
@@ -61,7 +62,7 @@ const Form = () => {
         <Label>Email *</Label>
         <Input
           type="email"
-          name="email"
+          name="EMAIL"
           required
         />
       </div>
@@ -70,7 +71,7 @@ const Form = () => {
         <Label>Phone Number *</Label>
         <Input
           type="tel"
-          name="phoneNumber"
+          name="PHONE"
           required
           maxLength={10}
         />
@@ -81,22 +82,21 @@ const Form = () => {
         <Input
         maxLength={10}
           type="tel"
-          name="whatsappNumber"
+          name="Whatsapp"
           required
         />
       </div>
       <div className="space-y-2">
-        <Label>City *</Label>
+        <Label>Address </Label>
         <Input
           type="text"
-          name="city"
-          required
+          name="ADDRESS"
         />
       </div>
 
       <div className="space-y-2">
         <Label>Which field do you specialize in? *</Label>
-        <Select name="speciality" required>
+        <Select name="SPECIALITY" required>
           <SelectTrigger><SelectValue placeholder="Select a field" /></SelectTrigger>
           <SelectContent >
             <SelectItem value="SOUND ENGINEER & MUSIC PRODUCER">Sound Engineer & Music Producer</SelectItem>
@@ -117,7 +117,7 @@ const Form = () => {
 
       <div className="space-y-2">
         <Label>Past Experience (If any) *</Label>
-        <Select name="experience" required>
+        <Select name="EXPERIENCE" required>
           <SelectTrigger><SelectValue placeholder="Select a option"></SelectValue></SelectTrigger>
           <SelectContent>
             <SelectItem value="YES">Yes</SelectItem>
@@ -126,14 +126,7 @@ const Form = () => {
         </Select>
       </div>
 
-      <div className="space-y-2">
-        <Label>How long have you had talent in this expertise? *</Label>
-        <Textarea
-          name="talentDuration"
-          required
-          placeholder="Describe your experience duration"
-        />
-      </div>
+      
       
       <Button disabled={submitting} className="w-full mt-4">Submit</Button>
       
@@ -145,7 +138,7 @@ const Form = () => {
           <Link href="mailto:career@vijyapana.com">
             <span className="inline-flex items-center relative top-[1px] gap-x-1">career@vijyapana.com</span>
           </Link>
-          <Link href="https://www.linkedin.com/company/vijyapana/">
+          <Link target="_blank" href="https://www.linkedin.com/company/vijyapana/">
             <span className="flex items-center"><FaLinkedin />/vijyapana</span>
           </Link>
         </p>
