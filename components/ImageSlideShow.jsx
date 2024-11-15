@@ -92,7 +92,7 @@ export default function Component() {
   }
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="aspect-w-3 aspect-h-2">
           <SuspenseSlideshow images={images1} />

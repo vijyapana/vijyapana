@@ -1,13 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
+import {v4 as uuid} from "uuid";
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { AiOutlineClose } from 'react-icons/ai'; // Importing the close icon
 import Link from 'next/link';
 
-function Sidebar() {
+function Sidebar({services}) {
   const [isOpen, setIsOpen] = useState(false);
   const [expanded, setExpanded] = useState(null);
   const sidebarRef = useRef(null);
-
+  console.log(services);
+  
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
@@ -35,7 +37,7 @@ function Sidebar() {
 
   // Handle expanding and collapsing of sub-items
   const toggleExpand = (item) => {
-    setExpanded(expanded === item ? null : item);
+    setExpanded(expanded === item ? (!item.includes(" ") ? null : item.split(" ")[0]) : item);
   };
 
   return (
@@ -61,85 +63,19 @@ function Sidebar() {
           <li className="py-2 hover:bg-gray-200 cursor-pointer" onClick={() => toggleExpand('collections')}>
             Services
           </li>
-          {expanded === 'collections' && (
+          {expanded && expanded.startsWith('collections')  && (
             <ul className="flex flex-col pl-4 space-y-2">
-              <li className="py-1 hover:bg-gray-200 cursor-pointer" onClick={() => toggleExpand('productShoot')}>
-                Product Shoot
+              {services.map((s)=>{
+                return <div key={uuid()}><li className="py-1 hover:bg-gray-200 cursor-pointer" onClick={() => toggleExpand('collections '+s.name)}>
+                {s.name}
               </li>
-              {expanded === 'productShoot' && (
-                <ul className="flex flex-col pl-4 space-y-1">
-                  <li>Lorem item 1</li>
-                  <li>Lorem item 2</li>
-                  <li>Lorem item 3</li>
-                  <li>Lorem item 4</li>
-                </ul>
-              )}
-              <li className="py-1 hover:bg-gray-200 cursor-pointer" onClick={() => toggleExpand('audioBook')}>
-                Audio Book
-              </li>
-              {expanded === 'audioBook' && (
-                <ul className="flex flex-col pl-4 space-y-1">
-                  <li>Lorem item 1</li>
-                  <li>Lorem item 2</li>
-                  <li>Lorem item 3</li>
-                  <li>Lorem item 4</li>
-                </ul>
-              )}
-              <li className="py-1 hover:bg-gray-200 cursor-pointer" onClick={() => toggleExpand('webDevelopment')}>
-                Web Development
-              </li>
-              {expanded === 'webDevelopment' && (
-                <ul className="flex flex-col pl-4 space-y-1">
-                  <li>Lorem item 1</li>
-                  <li>Lorem item 2</li>
-                  <li>Lorem item 3</li>
-                  <li>Lorem item 4</li>
-                </ul>
-              )}
-              <li className="py-1 hover:bg-gray-200 cursor-pointer" onClick={() => toggleExpand('appDevelopment')}>
-                App Development
-              </li>
-              {expanded === 'appDevelopment' && (
-                <ul className="flex flex-col pl-4 space-y-1">
-                  <li>Lorem item 1</li>
-                  <li>Lorem item 2</li>
-                  <li>Lorem item 3</li>
-                  <li>Lorem item 4</li>
-                </ul>
-              )}
-              <li className="py-1 hover:bg-gray-200 cursor-pointer" onClick={() => toggleExpand('socialMediaCreatives')}>
-                Social Media Creatives
-              </li>
-              {expanded === 'socialMediaCreatives' && (
-                <ul className="flex flex-col pl-4 space-y-1">
-                  <li>Lorem item 1</li>
-                  <li>Lorem item 2</li>
-                  <li>Lorem item 3</li>
-                  <li>Lorem item 4</li>
-                </ul>
-              )}
-              <li className="py-1 hover:bg-gray-200 cursor-pointer" onClick={() => toggleExpand('corporateGifts')}>
-                Corporate Gifts
-              </li>
-              {expanded === 'corporateGifts' && (
-                <ul className="flex flex-col pl-4 space-y-1">
-                  <li>Lorem item 1</li>
-                  <li>Lorem item 2</li>
-                  <li>Lorem item 3</li>
-                  <li>Lorem item 4</li>
-                </ul>
-              )}
-              <li className="py-1 hover:bg-gray-200 cursor-pointer" onClick={() => toggleExpand('printMedia')}>
-                Print Media
-              </li>
-              {expanded === 'printMedia' && (
-                <ul className="flex flex-col pl-4 space-y-1">
-                  <li>Lorem item 1</li>
-                  <li>Lorem item 2</li>
-                  <li>Lorem item 3</li>
-                  <li>Lorem item 4</li>
-                </ul>
-              )}
+              {expanded && expanded.endsWith(s.name) && (
+      <ul className="flex flex-col pl-4 space-y-1">
+        {s.dropdownpoints.map((p)=>{return <li key={uuid()}>{p}</li>})}
+      </ul>
+    )}
+              </div>
+              })}
             </ul>
           )}
           <li className="py-2 hover:bg-gray-200 cursor-pointer" onClick={() => closeSidebar()}>

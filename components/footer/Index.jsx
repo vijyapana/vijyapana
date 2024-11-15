@@ -1,10 +1,11 @@
 import React from 'react'
-import { FaInstagram } from "react-icons/fa6";
+import { FaInstagram, FaPhone } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin ,FaYoutube,FaFacebook} from "react-icons/fa";
 import Container from '../container';
 import Link from 'next/link';
+import { CiPhone } from 'react-icons/ci';
 
 const soicalLinks = [
   { 
@@ -17,7 +18,16 @@ const soicalLinks = [
     icon:<FaLinkedin/>,
     link:"https://www.linkedin.com/company/vijyapana/"
   },
-  
+  { 
+    id:3,
+    icon:<FaFacebook/>,
+    link:"https://www.facebook.com/vijyapana/"
+  },
+  { 
+    id:4,
+    icon:<FaYoutube/>,
+    link:"https://www.youtube.com/channel/UC0IWRLai-BAwci_e9MylNGw"
+  },
 ]
 function Index() {
   return (<Container>
@@ -29,8 +39,9 @@ function Index() {
     
     </div>
     </div>
-    <div className='flex justify-center items-center mt-8 text-center md:w-1/2  md:mt-0 text-xl'>
+    <div className='flex justify-center flex-col items-center mt-8 text-center md:w-1/2  md:mt-0 text-xl'>
         <Link href={"mailto:support@vijyapana.com"}><h1>Write to us at: support@vijyapana.com</h1></Link>
+        <p className='flex mt-2 items-center'><FaPhone className='text-md mr-2'/> +91 9889519102</p>
     </div>
     </footer>
     <footer className='border-t-2 mt-14 py-2 pb-4 flex flex-col items-center justify-between'>

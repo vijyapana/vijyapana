@@ -40,7 +40,8 @@ function Hero() {
       loop:true
     }} plugins={[
       Autoplay({
-        delay: 3000,
+        delay: 3500,
+        stopOnInteraction:false
       }),]} className="mt-[106px] md:mt-[64px] border">
   <CarouselContent>
     {images.map((img,idx)=>{

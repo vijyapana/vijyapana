@@ -72,7 +72,7 @@ function Navbar() {
             <div className='ml-2'>
               {s.dropdownpoints.map((p)=>{
                 return (
-                <p key={uuid()} className='text-sm my-2'>{p}
+                <p key={uuid()} className='text-sm capitalize my-1.5'>{p}
                 {/* <Link href={`${s.url}/${p.toLowerCase().replace(/ /g, '-')}`}>{p}</Link> */}
                 </p>
               );
@@ -102,7 +102,7 @@ function Navbar() {
        
     <nav className='flex justify-between md:hidden'>
       <div className="left">
-      <Hamburger/>
+      <Hamburger services={services}/>
       </div>
       <div className="right flex gap-x-4">
       <Link href={"/contact"}><IoCallSharp className='h-4 w-4'/></Link>

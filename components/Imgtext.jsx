@@ -9,7 +9,7 @@ function VideoText({ text }) {
     if (containerRef.current) {
       const containerTop = containerRef.current.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
-      const startOffset = 70; // Adjust this value to start the effect earlier
+      const startOffset = 160; // Adjust this value to start the effect earlier
 
       // Start parallax effect when the container is close to entering the viewport
       if (containerTop < windowHeight + startOffset && containerTop > -containerRef.current.offsetHeight) {

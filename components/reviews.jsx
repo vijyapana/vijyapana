@@ -80,19 +80,19 @@ export default function MarqueeCards() {
 
   return (
     <div 
-      className="w-full my-36 overflow-hidden bg-background"
+      className="w-full mb-36 overflow-hidden bg-background"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       <div 
-        className={`inline-flex gap-x-8 animate-marquee `} //${isPaused ? '' : 'animate-marquee'}
+        className={`inline-flex gap-x-20 animate-marquee `} //${isPaused ? '' : 'animate-marquee'}
         style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
       >
         {images.map((img,idx)=>{
-          return <div key={idx} className="w-[150px] flex gap-x-1 items-center"><img className="w-full object-contain" src={img}/></div>
+          return <div key={idx} className="w-[150px] flex gap-x-4 items-center"><img className="w-full object-contain" src={img}/></div>
         })}
         {images.map((img,idx)=>{
-          return <div key={idx} className="w-[150px] flex gap-x-1 items-center"><img className="w-full object-contain" src={img}/></div>
+          return <div key={idx} className="w-[150px] flex gap-x-4 items-center"><img className="w-full object-contain" src={img}/></div>
         })}
 
 
