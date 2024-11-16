@@ -21,12 +21,12 @@ const soicalLinks = [
   { 
     id:3,
     icon:<FaFacebook/>,
-    link:"https://www.facebook.com/vijyapana/"
+    link:"https://www.facebook.com/people/Vijyapana/61568464812343/"
   },
   { 
     id:4,
     icon:<FaYoutube/>,
-    link:"https://www.youtube.com/channel/UC0IWRLai-BAwci_e9MylNGw"
+    link:"https://youtube.com/@vijyapana"
   },
 ]
 function Index() {

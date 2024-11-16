@@ -15,6 +15,7 @@ export default function Home() {
 <Products/>
    <Imgtext text="creative solutions<br />for every Business needs."/>
     <Services/>
+    <SectionTitle text={"Product Showcase"}></SectionTitle>
     <ImageSlideShow/>
     <Testimonials/>
     </>
