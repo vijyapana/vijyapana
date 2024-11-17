@@ -8,7 +8,7 @@ function Sidebar({services}) {
   const [isOpen, setIsOpen] = useState(false);
   const [expanded, setExpanded] = useState(null);
   const sidebarRef = useRef(null);
-  console.log(services);
+  
   
   const toggleSidebar = () => {
     setIsOpen(!isOpen);

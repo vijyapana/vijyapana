@@ -6,6 +6,7 @@ import { getServices } from '@/lib/contentful'
 import { Skeleton } from '../ui/skeleton'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Link from 'next/link'
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -105,6 +106,7 @@ export default function MarqueeCards() {
               <Skeleton className="w-full h-[100px] sm:h-[120px] md:h-[150px] lg:h-[180px]" />
               <Skeleton className="h-8 mt-4 mx-4" />
             </CardContent>
+            
           </Card>
         ))}
       </div>
@@ -114,8 +116,9 @@ export default function MarqueeCards() {
   return (
     <div className="w-full mb-24 -mt-4 px-4 lg:px-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((card, index) => (
+        {services.map((card, index) => (<Link href = {`/services/${index+1}`}>
           <MarqueeCard key={`${card.id}-${index}`} title={card.name} images={card.images} />
+          </Link>
         ))}
       </div>
     </div>
