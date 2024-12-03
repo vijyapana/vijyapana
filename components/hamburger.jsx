@@ -65,13 +65,14 @@ function Sidebar({services}) {
           </li>
           {expanded && expanded.startsWith('collections')  && (
             <ul className="flex flex-col pl-4 space-y-2">
-              {services.map((s)=>{
+              {services.map((s,idx)=>{
                 return <div key={uuid()}><li className="py-1 hover:bg-gray-200 cursor-pointer" onClick={() => toggleExpand('collections '+s.name)}>
                 {s.name}
               </li>
               {expanded && expanded.endsWith(s.name) && (
       <ul className="flex flex-col pl-4 space-y-1">
-        {s.dropdownpoints.map((p)=>{return <li key={uuid()}>{p}</li>})}
+        
+        {s?.subservices?.map((p,idx2)=>{return <Link onClick={closeSidebar} href={`/services/${idx+1}#${idx2+1}`}><li key={uuid()}>{p.name}</li></Link>})}
       </ul>
     )}
               </div>

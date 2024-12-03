@@ -66,15 +66,16 @@ function Navbar() {
       
       <div style={{gridTemplateColumns: `repeat(${services.length}, minmax(0, 1fr))`}} className='hidden absolute  group-hover:grid gap-x-4 bg-white -bottom-0.5 translate-y-[100%] z-30 w-[80vw] -translate-x-16 border rounded-md shadow-md p-4'>
         
-        {services.map((s)=>{
+        {services.map((s,idx)=>{
           return <div key ={uuid()}>
-          <h1 className='font-medium text-gray-700 flex items-center gap-x-1'><FaHandPointRight/>{s.name}</h1>
+          <Link href={`/services/${idx+1}`}><h1 className='font-medium text-gray-700 flex items-center gap-x-1'><FaHandPointRight/>{s.name}</h1></Link>
             <div className='ml-2'>
-              {s.dropdownpoints.map((p)=>{
+              {s?.subservices?.map((p,idx2)=>{
                 return (
-                <p key={uuid()} className='text-sm capitalize my-1.5'>{p}
-                {/* <Link href={`${s.url}/${p.toLowerCase().replace(/ /g, '-')}`}>{p}</Link> */}
+                  <Link href={`/services/${idx+1}#${idx2+1}`}><p key={uuid()} className='text-sm capitalize my-1.5'>{p.name}
+                  {/* <Link href={`${s.url}/${p.toLowerCase().replace(/ /g, '-')}`}>{p}</Link> */}
                 </p>
+                </Link>
               );
               })}
             </div>

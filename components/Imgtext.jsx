@@ -24,7 +24,7 @@ function VideoText({ text }) {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative mt-36 w-full h-[30vh] md:h-[40vh] overflow-hidden">
+    <div className="relative mt-36 w-full h-[30vh] md:h-[40vh] overflow-hidden">
       {/* Video Background */}
       <video
         className="absolute inset-0 w-full h-full object-cover"

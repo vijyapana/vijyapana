@@ -41,8 +41,8 @@ export default function ServicePageClient({ service }) {
             </div>
 
             {service?.subservices?.map((subservice, idx) => (
-                <div key={idx} ref={(el) => (subserviceRefs.current[idx] = el)}
-                className="bg-white border-2 border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl m-6">
+                <div id={idx+1} key={idx} ref={(el) => (subserviceRefs.current[idx] = el)}
+                className="bg-white  overflow-hidden transition-transform transform">
                     <Cat
                         images={subservice?.images}
                         name={subservice?.name}
