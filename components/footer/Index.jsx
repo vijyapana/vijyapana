@@ -45,7 +45,7 @@ function Index() {
     </div>
     </footer>
     <footer className='border-t-2 mt-14 py-2 pb-4 flex flex-col items-center justify-between'>
-      <p className='mt-2 leading-1 tracking-tighter text-justify high text-gray-400 text-xs'>© 2024 Vijyapana. All Rights Reserved. This website and its content, including text, images, graphics, and designs, are the property of Vijyapana and are protected by copyright, trademark, and other intellectual property laws. Unauthorized use, reproduction, or distribution of this material is strictly prohibited and may result in legal action. For permissions and inquiries, please contact vijyapana@gmail.com.</p>
+      <p className='mt-2 leading-1 tracking-tighter text-justify high text-gray-400 text-xs'>© 2024 Vijyapana. All Rights Reserved. This website and its content, including text, images, graphics, and designs, are the property of Vijyapana and are protected by copyright, trademark, and other intellectual property laws. Unauthorized use, reproduction, or distribution of this material is strictly prohibited and may result in legal action. For permissions and inquiries, please contact support@vijyapana.com.</p>
       <p className='font-bold tracking-wide text-gray-500 text-xl  mt-4 flex items-center mx-auto  text-center'>Made with <small><FaHeart className='mx-1.5 text-red-500 inline'/></small> in India</p>
       
     </footer>

@@ -9,6 +9,7 @@ import Container from "./container";
 import { FaFilePdf } from "react-icons/fa";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import RichTextRenderer from "./blog/RichTextFormatter";
 
 
 const Slideshow = ({ images }) => {
@@ -71,7 +72,7 @@ export default function Cat({images,name,desc,pdf,video}) {
       <div className="flex flex-col self-start mt-2 md:mt-12 w-full text-justify md:w-1/3 md:text-left ">
         <h2 className="text-2xl font-semibold mb-4 md:mb-6">{name}</h2>
         <p className="text-gray-600 text-sm mb-6 leading-6 md:leading-6">
-          {desc}
+          {<RichTextRenderer richTextDocument={desc}/>}
         </p>
 
         {/* Buttons */}

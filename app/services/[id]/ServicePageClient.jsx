@@ -3,8 +3,11 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Cat from "@/components/servicePage";
+import RichTextRenderer from "@/components/blog/RichTextFormatter";
 
 export default function ServicePageClient({ service }) {
+    
+    console.log(service);
     
     const subserviceRefs = useRef([]);
 
@@ -46,7 +49,7 @@ export default function ServicePageClient({ service }) {
                     <Cat
                         images={subservice?.images}
                         name={subservice?.name}
-                        desc={subservice?.description}
+                        desc={subservice?.desc}
                         pdf={subservice?.pdf}
                         video={subservice?.video}
                         
