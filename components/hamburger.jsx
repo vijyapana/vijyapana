@@ -54,7 +54,7 @@ function Sidebar({services}) {
       {/* Sidebar */}
       <div
         ref={sidebarRef}
-        className={`fixed top-0 left-0 w-64 h-[100vh] z-50 bg-white shadow-md transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed top-0 left-0 w-64 h-[150vh] z-50 bg-white shadow-md transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <ul className="flex flex-col p-4 space-y-2">
           <li className="py-2 hover:bg-gray-200 cursor-pointer" onClick={() => closeSidebar()}>
@@ -99,7 +99,7 @@ function Sidebar({services}) {
       {/* Overlay when sidebar is open */}
       {isOpen && (
         <div
-          className="fixed inset-0 h-[100vh] bg-black opacity-50 z-[20]"
+          className="fixed inset-0 h-[150vh] bg-black opacity-50 z-[20]"
           onClick={closeSidebar} // Close sidebar on overlay click
         />
       )}

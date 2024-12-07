@@ -32,13 +32,13 @@ const Slideshow = ({ images }) => {
     }, 5000)
   
     return (
-      <div className="relative mt-12 w-full h-[570px] overflow-hidden">
+      <div className="relative mt-12 w-full min-h-[400px] md:min-h-[530px] overflow-hidden">
         <AnimatePresence initial={false}>
           <motion.img
             key={index}
             src={images[index]}
             alt={`Slideshow image ${index + 1}`}
-            className="absolute top-0 left-0 w-full h-full object-top object-contain"
+            className="absolute top-0 left-0 w-full h-full object-contain"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -62,7 +62,7 @@ const Slideshow = ({ images }) => {
 export default function Cat({images,name,desc,pdf,video}) {
   return (
    <>
-    <section className="flex flex-col md:flex-row items-center justify-center gap-6 gap-x-12 p-6 mt-12 mb-2">
+    <section className="flex flex-col md:flex-row items-center justify-center gap-6 gap-x-12 p-6 mt-4 md:mt-12 mb-8">
       {/* Left Side: Image */}
       <div className="flex-shrink-0 w-full md:w-1/2">
        <SuspenseSlideshow images={images} />
@@ -77,7 +77,7 @@ export default function Cat({images,name,desc,pdf,video}) {
 
         {/* Buttons */}
         
-        <div className="flex mt-8 justify-start md:justify-start gap-4">
+        <div className="flex md:mt-2 justify-start md:justify-start gap-4">
           {pdf && <Link href={pdf}>
           <Button className="px-6 py-2 rounded-none  flex items-center gap-x-1">
             <FaFilePdf/> Download Catalogue
