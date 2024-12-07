@@ -44,7 +44,7 @@ const FAQPage = () => {
       </BreadcrumbItem>
     </BreadcrumbList>
   </Breadcrumb>
-      <h1 className="text-3xl font-bold text-center mb-6">FAQs</h1>
+      <h1 className="text-3xl mt-4 font-bold text-center mb-6">FAQs</h1>
       <div className="space-y-4">
         {faqs.map((faq, index) => (
           <div key={index} className="border p-4 rounded-lg shadow-sm">
