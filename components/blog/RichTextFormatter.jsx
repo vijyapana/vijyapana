@@ -1,6 +1,6 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-
+import { BLOCKS } from '@contentful/rich-text-types';
 const RichTextRenderer = ({ richTextDocument }) => {
   const options = {
     renderNode: {
@@ -31,6 +31,15 @@ const RichTextRenderer = ({ richTextDocument }) => {
   ),
   'heading-6': (node, children) => (
     <h6 className="text-sm font-normal mt-4 mb-1">{children}</h6>
+  ),
+  [BLOCKS.UL_LIST]: (node, children) => (
+    <ul className="list-disc pl-6 mb-4">{children}</ul>
+  ),
+  [BLOCKS.OL_LIST]: (node, children) => (
+    <ol className="list-decimal pl-6 mb-4">{children}</ol>
+  ),
+  [BLOCKS.LIST_ITEM]: (node, children) => (
+    <li className="mb-2">{children}</li>
   ),
     },
   };
