@@ -88,9 +88,11 @@ function Navbar() {
      </li>
      <li className='cursor-pointer'><Link href={"/about"}> About</Link></li>
       <li className='cursor-pointer'><Link href={"/career"}>Career</Link></li>
+      <li className='cursor-pointer'><Link href={"/blog"}>Blog</Link></li>
+      <li className='cursor-pointer'><Link href={"/faqs"}>FAQ(s)</Link></li>
       </ul>
         </div>
-        <header className='flex justify-center items-center md:-translate-x-24'>
+        <header className='flex justify-center items-center md:-translate-x-[8rem]'>
         <p className='text-3xl sm:text-3xl font-[600] tracking-widest text-[#353535]'><Link href={"/"}> VIJYAPANA</Link></p>
         </header>
         <div className='hidden md:block'>

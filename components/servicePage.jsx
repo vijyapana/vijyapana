@@ -38,7 +38,7 @@ const Slideshow = ({ images }) => {
             key={index}
             src={images[index]}
             alt={`Slideshow image ${index + 1}`}
-            className="absolute top-0 left-0 w-full h-full object-top object-cover"
+            className="absolute top-0 left-0 w-full h-full object-top object-contain"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

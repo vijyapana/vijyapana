@@ -5,6 +5,7 @@ import PostHeading from '@/components/blog/PostHeading';
 import PostMetaData from '@/components/blog/PostMetaData';
 import Container from '@/components/container';
 import { Breadcrumb, BreadcrumbList } from '@/components/ui/breadcrumb';
+import { Separator } from '@/components/ui/separator';
 import { getBlogPosts } from '@/lib/contentful';
 
 
@@ -26,6 +27,7 @@ async function page({params}) {
       <PostBreadCrumps/>
       <PostHeading text={post.titlefull}/>
       <PostMetaData date={post.date.toLocaleString()}/>
+      <Separator/>
       <Post obj={post.body}/>
     </Container>
     </div>

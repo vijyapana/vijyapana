@@ -33,7 +33,7 @@ export default function ServicePageClient({ service }) {
             <div
                 style={{
                     backgroundImage: `url('${service?.bgImage}')`,
-                    backgroundSize: "cover",
+                    backgroundSize: "contain",
                 }}
                 className="mt-24 md:mt-16 h-[40vh] relative flex items-center justify-center text-white"
             >

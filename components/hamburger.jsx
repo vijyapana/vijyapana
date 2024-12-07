@@ -85,6 +85,14 @@ function Sidebar({services}) {
           <li className="py-2 hover:bg-gray-200 cursor-pointer" onClick={() => closeSidebar()}>
             <Link href={"/career"}>Career</Link>
           </li>
+          <li className="py-2 hover:bg-gray-200 cursor-pointer" onClick={() => closeSidebar()}>
+          <Link href={"/blog"}>Blog</Link></li>
+          
+
+          <li className="py-2 hover:bg-gray-200 cursor-pointer" onClick={() => closeSidebar()}>
+          
+          <Link href={"/faqs"}>FAQ(s)</Link></li>
+         
         </ul>
       </div>
 
