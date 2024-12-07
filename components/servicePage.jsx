@@ -77,7 +77,7 @@ export default function Cat({images,name,desc,pdf,video}) {
 
         {/* Buttons */}
         
-        <div className="flex md:mt-2 justify-start md:justify-start gap-4">
+        <div className="flex flex-col md:flex-row md:mt-2 justify-start md:justify-start gap-4">
           {pdf && <Link href={pdf}>
           <Button className="px-6 py-2 rounded-none  flex items-center gap-x-1">
             <FaFilePdf/> Download Catalogue
