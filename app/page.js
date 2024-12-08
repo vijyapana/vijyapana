@@ -12,7 +12,7 @@ export default function Home() {
   return (<>
     
     <Hero/>
-<Products/>
+    <Products/>
    <Imgtext text="creative solutions<br />for every Business needs."/>
     <Services/>
     <SectionTitle text={"Product Showcase"}></SectionTitle>

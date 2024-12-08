@@ -72,7 +72,7 @@ function Navbar() {
             <div className='ml-2'>
               {s?.subservices?.map((p,idx2)=>{
                 return (
-                  <Link href={`/services/${idx+1}#${idx2+1}`}><p key={uuid()} className='text-sm capitalize my-1.5'>{p.name}
+                  <Link key={idx2} href={`/services/${idx+1}#${idx2+1}`}><p key={uuid()} className='text-sm capitalize my-1.5'>{p.name}
                   {/* <Link href={`${s.url}/${p.toLowerCase().replace(/ /g, '-')}`}>{p}</Link> */}
                 </p>
                 </Link>

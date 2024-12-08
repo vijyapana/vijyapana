@@ -23,7 +23,7 @@ function ProductCard({setVisible,name,thumbnail,insideImages,pdfFile,setActivePr
           <div className="absolute inset-0 bg-[rgb(0,0,0,0)] group-hover:bg-[rgb(0,0,0,0.3)] duration-500  text-xl flex justify-center items-center gap-x-3">
             <div className="opacity-0 group-hover:opacity-100 flex gap-x-2">
               <div className="bg-black flex items-center justify-center h-8 w-8 rounded-lg" >
-          <Link href={pdfFile}><IoIosDownload className='text-white cursor-pointer'/></Link>
+          {pdfFile && <Link href={pdfFile}><IoIosDownload className='text-white cursor-pointer'/></Link>}
           
           </div>
               <div className="bg-black flex items-center justify-center h-8 w-8 rounded-lg" >
