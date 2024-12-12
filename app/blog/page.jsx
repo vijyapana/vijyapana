@@ -10,8 +10,6 @@ function page() {
   useEffect(()=>{
     const get = async()=>{
     const res = await getBlogPosts();
-    console.log(res);
-    
     setPosts(res);
     }
     get()
