@@ -1,0 +1,43 @@
+name: Deploy Next.js Static Site to Hostinger via FTP
+
+on:
+  # Trigger the workflow when content changes in Contentful (via Webhook)
+  repository_dispatch:
+    types: [contentful-webhook]  # This is the type of webhook from Contentful
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20' # Set the Node.js version that your project uses
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Build the Next.js site
+      - name: Build Next.js
+        run: npm run build
+
+      # Export the Next.js site to static HTML
+      - name: Export Next.js site
+        run: npm run export
+
+      # Deploy the site to Hostinger via FTP
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          ftp-server: ${{ secrets.HOST }}               # Your Hostinger FTP server (e.g., ftp.yourdomain.com)
+          ftp-username: ${{ secrets.USERNAME }}         # Your FTP username
+          ftp-password: ${{ secrets.PASSWORD }}         # Your FTP password
+          local-dir: ./out                              # The output folder after running `next export`
+          remote-dir: /public_html                     # The destination directory on your Hostinger server
