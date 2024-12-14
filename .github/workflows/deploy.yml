@@ -28,9 +28,7 @@ jobs:
       - name: Build Next.js
         run: npm run build
 
-      # Export the Next.js site to static HTML
-      - name: Export Next.js site
-        run: npm run export
+      
 
       # Deploy the site to Hostinger via FTP
       - name: Deploy to Hostinger via FTP
@@ -38,6 +36,7 @@ jobs:
         with:
           ftp-server: ${{ secrets.HOST }}               # Your Hostinger FTP server (e.g., ftp.yourdomain.com)
           ftp-username: ${{ secrets.USERNAME }}         # Your FTP username
-          ftp-password: ${{ secrets.PASSWORD }}         # Your FTP password
+          ftp-password: ${{ secrets.PASSWORD }}
+          port: 21         
           local-dir: ./out                              # The output folder after running `next export`
           remote-dir: /public_html                     # The destination directory on your Hostinger server
