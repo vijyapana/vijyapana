@@ -38,5 +38,5 @@ jobs:
           username: ${{ secrets.USERNAME }}         # Your FTP username
           password: ${{ secrets.PASSWORD }}
           port: 21         
-          local-dir: ./out                              # The output folder after running `next export`
+          local-dir: ./out/                              # The output folder after running `next export`
           server-dir: /public_html                     # The destination directory on your Hostinger server
