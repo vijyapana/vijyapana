@@ -39,4 +39,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: 21         
           local-dir: ./out/                              # The output folder after running `next export`
-          server-dir: /public_html                     # The destination directory on your Hostinger server
+          server-dir: /public_html/                     # The destination directory on your Hostinger server
