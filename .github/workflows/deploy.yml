@@ -34,7 +34,7 @@ jobs:
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action/@v4.3.5
         with:
-          server: ftp://62.72.28.228               # Your Hostinger FTP server (e.g., ftp.yourdomain.com)
+          server: 62.72.28.228               # Your Hostinger FTP server (e.g., ftp.yourdomain.com)
           username: ${{ secrets.USERNAME }}         # Your FTP username
           password: ${{ secrets.PASSWORD }}
           port: 21         
