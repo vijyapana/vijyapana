@@ -2,14 +2,14 @@
 import React, { useState,useEffect } from 'react'
 import { getServices } from '@/lib/contentful'
 
-import { IoLogoWhatsapp } from "react-icons/io";
+import { IoMdPerson } from "react-icons/io";
 import Hamburger from './hamburger';
 import {v4 as uuid} from "uuid"
 import { Input } from "@/components/ui/input"
 import { MdAudiotrack } from "react-icons/md";
 import { FaHandPointRight } from "react-icons/fa";
 
-import { IoCallSharp } from "react-icons/io5";
+import { IoCallSharp, IoPerson } from "react-icons/io5";
 import  Container from "@/components/container";
 import Link from 'next/link';
 function Navbar() {
@@ -99,7 +99,7 @@ function Navbar() {
         <div className="right flex gap-x-4">
       
       <Link href={"/contact"}><IoCallSharp className='h-4 w-4'/></Link>
-      <Link href={`https://wa.me/<919889519102>?text=Hello!%20I'd%20like%20to%20inquire%20about%20your%20services`}><IoLogoWhatsapp className='h-4 w-4'/></Link>
+      <Link target='_blank' href={`https://vijyapanacrm.vercel.app`}><IoPerson className='h-4 w-4'/></Link>
       </div>
         </div>
        
@@ -109,7 +109,7 @@ function Navbar() {
       </div>
       <div className="right flex gap-x-4">
       <Link href={"/contact"}><IoCallSharp className='h-4 w-4'/></Link>
-      <Link href={`https://wa.me/<919889519102>?text=Hello!%20I'd%20like%20to%20inquire%20about%20your%20services`}><IoLogoWhatsapp className='h-4 w-4'/></Link>
+      <Link target='_blank' href={`https://vijyapanacrm.vercel.app`}><IoPerson className='h-4 w-4'/></Link>
       </div>
     </nav>
     </Container>
