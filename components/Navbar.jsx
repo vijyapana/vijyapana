@@ -99,7 +99,7 @@ function Navbar() {
         <div className="right flex gap-x-4">
       
       <Link href={"/contact"}><IoCallSharp className='h-4 w-4'/></Link>
-      <Link target='_blank' href={`https://vijyapanacrm.vercel.app`}><IoPerson className='h-4 w-4'/></Link>
+      <Link target='_blank' href={`https://crm.vijyapana.com`}><IoPerson className='h-4 w-4'/></Link>
       </div>
         </div>
        
