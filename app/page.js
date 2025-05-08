@@ -1,3 +1,8 @@
+export const metadata = {
+  alternates: {
+    canonical: "https://vijyapana.com/",
+  },
+};
 
 import Hero from "@/components/hero";
 import ImageSlideShow from "@/components/ImageSlideShow";
