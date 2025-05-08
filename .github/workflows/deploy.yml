@@ -1,7 +1,9 @@
 name: Deploy Next.js Static Site to Hostinger via FTP
 
 on:
-  # Trigger the workflow when content changes in Contentful (via Webhook)
+  push:
+    branches:
+      - main
   repository_dispatch:
     types: [contentful-webhook]  # This is the type of webhook from Contentful
 
