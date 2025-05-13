@@ -16,6 +16,9 @@ const montserrat = Montserrat({
 export const metadata = {
   title: "Vijyapana Advertisements",
   description: "Vijyapana Advertisements offers expert video production, product photography, audiobook creation, and print media solutions to enhance brand visibility. Specializing in corporate gifts and social media creatives, Vijyapana delivers customized advertising services that captivate audiences. Our professional team ensures high-quality visuals and impactful content. Choose Vijyapana to elevate your brand and make a lasting impression.",
+  verification: {
+    google: "EAOEEjXQdyVLoqctE_VsO87nE34oJj6SjyKq2WN-nhU",
+  }
 };
 
 export default function RootLayout({ children }) {
