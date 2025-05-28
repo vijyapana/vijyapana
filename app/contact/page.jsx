@@ -48,7 +48,7 @@ export default function ContactUs() {
     e.target.reset();
   }, []);
   return (
-    <div className="container mx-auto my-24 p-6 md:p-10 bg-white rounded-lg">
+    <div className="container mx-auto my-32 md:my-24 p-6 md:p-10 bg-white rounded-lg">
       <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900">
         Get in Touch with us
       </h1>
