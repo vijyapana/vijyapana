@@ -11,6 +11,10 @@ import Image from "next/image";
 import { toast } from "react-toastify";
 import Link from "next/link";
 
+
+
+
+
 export default function ContactUs() {
   const [isSubmitting,setIsSubmitting] = useState(false);
   const handleSubmit = useCallback((e) => {
@@ -46,10 +50,12 @@ export default function ContactUs() {
   return (
     <div className="container mx-auto my-24 p-6 md:p-10 bg-white rounded-lg">
       <h1 className="text-4xl font-bold text-center mb-6 text-gray-900">
-        Connect with Us
+        Get in Touch with us
       </h1>
-      <p className="text-center text-gray-700 mb-10 text-lg">
-        Feel free to reach out for any project or query. We&apos;re here to help!
+      <p className="text-gray-700 mb-16 max-w-6xl mx-auto text-md md:text-lg text-justify">
+        Vijyapana Advertisements is a renowned supplier, exporter, and trader of customized corporate gifts and
+luxury gifting solutions. We also offer expert video production, product photography, audiobook creation, and print
+media services to help brands enhance their visibility
       </p>
       
       <div className="flex flex-col md:flex-row items-center justify-center space-y-10 md:space-y-0 md:space-x-10">
