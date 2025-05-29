@@ -1,56 +1,93 @@
 import React from 'react'
-import { FaInstagram, FaPhone } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
-import { FaLinkedin ,FaYoutube,FaFacebook} from "react-icons/fa";
+import { FaHeart, FaPhone, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import Container from '../container';
 import Link from 'next/link';
-import { CiPhone } from 'react-icons/ci';
+import { footerConfig } from '@/lib/footerConfig';
 
-const soicalLinks = [
-  { 
-    id:1,
-    icon:<FaInstagram/>,
-    link:"https://www.instagram.com/vijyapana"
-  },
-  { 
-    id:2,
-    icon:<FaLinkedin/>,
-    link:"https://www.linkedin.com/company/vijyapana/"
-  },
-  { 
-    id:3,
-    icon:<FaFacebook/>,
-    link:"https://www.facebook.com/people/Vijyapana/61568464812343/"
-  },
-  { 
-    id:4,
-    icon:<FaYoutube/>,
-    link:"https://youtube.com/@vijyapana"
-  },
-]
 function Index() {
-  return (<Container>
-    <footer className='flex flex-col md:flex-row mt-24 pt-12 border-t-2 cursor-pointer'>
-        <div className='w-full md:w-1/2 text-2xl'>
-        <p className='text-center mb-4 '>Social Links</p>
-        <div className='flex justify-center gap-x-16'>
-          {soicalLinks.map((soc)=>{return <Link target='_blank' key={soc.id} href={soc.link}>{soc.icon}</Link>})}
-    
-    </div>
-    </div>
-    <div className='flex justify-center flex-col items-center mt-8 text-center md:w-1/2  md:mt-0 text-xl'>
-        <Link href={"mailto:support@vijyapana.com"}><h1>Write to us at: support@vijyapana.com</h1></Link>
-        <p className='flex mt-2 items-center'><FaPhone className='text-md mr-2'/> +91 9889519102</p>
-    </div>
+  const { aboutUs, importantLinks, ourProducts, contactUs, socialLinks } = footerConfig;
+
+  return (<Container>    <footer className='mt-24 pt-12 border-t-2'>
+      <div className='grid grid-cols-1 md:grid-cols-12 gap-8 mb-12'>
+        {/* About Us */}
+        <div className='md:col-span-4'>
+          <h3 className='text-lg font-semibold mb-4'>{aboutUs.title}</h3>
+          <p className='text-gray-600 text-sm leading-relaxed'>{aboutUs.description}</p>
+        </div>        {/* Important Links */}
+        <div className='md:col-span-2'>
+          <h3 className='text-lg font-semibold mb-4'>{importantLinks.title}</h3>
+          <ul className='space-y-2'>
+            {importantLinks.links.map((link, index) => (
+              <li key={index}>
+                <Link href={link.href} className='text-gray-600 hover:text-gray-900 text-sm'>
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>        {/* Our Products */}
+        <div className='md:col-span-3'>
+          <h3 className='text-lg font-semibold mb-4'>{ourProducts.title}</h3>
+          <ul className='grid grid-cols-1 gap-x-4 gap-y-2'>
+            {ourProducts.links.map((link, index) => (
+              <li key={index}>
+                <Link href={link.href} className='text-gray-600 hover:text-gray-900 text-sm transition-colors duration-200'>
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>        {/* Contact Us */}
+        <div className='md:col-span-3'>
+          <h3 className='text-lg font-semibold mb-4'>{contactUs.title}</h3>
+          <div className='space-y-2 text-sm text-gray-600'>
+            <p className='flex items-center gap-2'>
+              <FaMapMarkerAlt className='flex-shrink-0' />
+              {contactUs.address}
+            </p>
+            <p className='flex items-center gap-2'>
+              <FaPhone className='flex-shrink-0' />
+              {contactUs.phone}
+            </p>
+            <Link href={`mailto:${contactUs.email}`} className='flex items-center gap-2 hover:text-gray-900'>
+              <FaEnvelope className='flex-shrink-0' />
+              {contactUs.email}
+            </Link>
+          </div>
+          
+          {/* Social Links */}
+          <div className='mt-4 flex gap-4'>
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              return (
+                <Link 
+                  key={social.id} 
+                  href={social.link} 
+                  target='_blank'
+                  className='text-gray-600 hover:text-gray-900 text-xl'
+                >
+                  <Icon />
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     </footer>
-    <footer className='border-t-2 mt-14 py-2 pb-4 flex flex-col items-center justify-between'>
-      <p className='mt-2 leading-1 tracking-tighter text-justify high text-gray-400 text-xs'>© 2024 Vijyapana. All Rights Reserved. This website and its content, including text, images, graphics, and designs, are the property of Vijyapana and are protected by copyright, trademark, and other intellectual property laws. Unauthorized use, reproduction, or distribution of this material is strictly prohibited and may result in legal action. For permissions and inquiries, please contact support@vijyapana.com.</p>
-      <p className='font-bold tracking-wide text-gray-500 text-xl  mt-4 flex items-center mx-auto  text-center'>Made with <small><FaHeart className='mx-1.5 text-red-500 inline'/></small> in India</p>
-      
+    <footer className='border-t-2 py-6'>
+      <div className='space-y-4'>
+        <p className='text-xs text-gray-500 text-center'>
+          © {new Date().getFullYear()} Vijyapana. All Rights Reserved. This website and its content, including text, images, graphics, and designs, are the property of Vijyapana and are protected by copyright, trademark, and other intellectual property laws.
+        </p>
+        <p className='text-sm font-semibold text-gray-600 flex items-center justify-center'>
+          Made with <FaHeart className='mx-1.5 text-red-500 inline'/> in India
+        </p>
+      </div>
     </footer>
-    </Container>
+  </Container>
   )
 }
+
+
 
 export default Index
