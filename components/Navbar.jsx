@@ -62,7 +62,7 @@ function Navbar() {
         <div className='hidden md:block h-full'>
         <ul className="right flex text-sm font-semibold gap-x-4 tracking-normal uppercase ">
       <li className='cursor-pointer'><Link href={"/"}>Home</Link></li>
-     <li className='relative cursor-pointer group relative -left-3 px-4'>Services
+     <li className='relative cursor-pointer group relative -left-3 px-4'><Link href={"/our-services"}>Services</Link>
       
       <div style={{gridTemplateColumns: `repeat(${services.length}, minmax(0, 1fr))`}} className='hidden absolute  group-hover:grid gap-x-4 bg-white -bottom-0 translate-y-[100%] z-30 w-[80vw] -translate-x-16 border rounded-md shadow-md p-4'>
         
