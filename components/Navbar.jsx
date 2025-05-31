@@ -68,11 +68,11 @@ function Navbar() {
         
         {services.map((s,idx)=>{
           return <div key ={uuid()}>
-          <Link href={`/services/${idx+1}`}><h1 className='font-medium text-gray-700 flex items-center gap-x-1'><FaHandPointRight/>{s.name}</h1></Link>
+          <Link href={`/services/${s.name.toLowerCase().replace(/\s+/g, "-")}`}><h1 className='font-medium text-gray-700 flex items-center gap-x-1'><FaHandPointRight/>{s.name}</h1></Link>
             <div className='ml-2'>
               {s?.subservices?.map((p,idx2)=>{
                 return (
-                  <Link key={idx2} href={`/services/${idx+1}#${idx2+1}`}><p key={uuid()} className='text-sm capitalize my-1.5'>{p.name}
+                  <Link key={idx2} href={`/services/${s.name.toLowerCase().split(" ")[0]}/${p.name.toLowerCase().replace(/\s+/g, "-")}`}><p key={uuid()} className='text-sm capitalize my-1.5'>{p.name}
                   {/* <Link href={`${s.url}/${p.toLowerCase().replace(/ /g, '-')}`}>{p}</Link> */}
                 </p>
                 </Link>

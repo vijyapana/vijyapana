@@ -60,6 +60,7 @@ const Slideshow = ({ images }) => {
 
 
 export default function Cat({images,name,desc,pdf,video}) {
+  console.log(images)
   return (
    <>
     <section className="flex flex-col md:flex-row items-center justify-center gap-6 gap-x-12 p-6 mt-4 md:mt-12 mb-8">
