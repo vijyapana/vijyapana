@@ -72,7 +72,7 @@ function Sidebar({services}) {
               {expanded && expanded.endsWith(s.name) && (
       <ul className="flex flex-col pl-4 space-y-1">
         
-        {s?.subservices?.map((p,idx2)=>{return <Link onClick={closeSidebar} href={`/services/${idx+1}#${idx2+1}`}><li className='py-1' key={uuid()}>{p.name}</li></Link>})}
+        {s?.subservices?.map((p,idx2)=>{return <Link onClick={closeSidebar} href={`/services/${s.name.toLowerCase().split(" ")[0]}/${p.name.toLowerCase().replace(/\s+/g, "-")}`}><li className='py-1' key={uuid()}>{p.name}</li></Link>})}
       </ul>
     )}
               </div>
