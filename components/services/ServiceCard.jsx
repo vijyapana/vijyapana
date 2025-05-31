@@ -116,7 +116,7 @@ export default function MarqueeCards() {
   return (
     <div className="w-full mb-24 -mt-4 px-4 lg:px-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((card, index) => (<Link href = {`/services/${index+1}`}>
+        {services.map((card, index) => (<Link href = {`/services/${card.name.toLowerCase().replace(/\s+/g, "-")}`}>
           <MarqueeCard key={`${card.id}-${index}`} title={card.name} images={card.images} />
           </Link>
         ))}
