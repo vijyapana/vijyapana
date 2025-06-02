@@ -3,7 +3,16 @@ import { getServices } from "@/lib/contentful";
 import ServicePageClient from "./ServicePageClient";
 import Head from "next/head";
 
+export async function generateMetadata({ params }) {
+  const canonicalUrl = `https://vijyapana.com/services/${params.id}/`;
 
+  return {
+    
+    alternates: {
+      canonical: canonicalUrl,
+    },
+  };
+}
 export async function generateStaticParams() {
     const services = await getServices();
     

@@ -1,7 +1,18 @@
 import { getServices } from '@/lib/contentful';
-import Head from "next/head";
+
 import React from 'react'
 import Cat from "@/components/servicePage";
+export async function generateMetadata({ params }) {
+  const canonicalUrl = `https://vijyapana.com/services/${params.id}/${params.id2}`;
+
+  return {
+    
+    alternates: {
+      canonical: canonicalUrl,
+    },
+  };
+}
+
 export async function generateStaticParams() {
    const services = await getServices();
 
@@ -28,14 +39,11 @@ async function page({params}) {
   
   const allservices = services.filter((s)=>s.name.toLowerCase().split(" ")[0]==params.id)[0]
   const subservice = allservices.subservices.filter((s)=>s.name.toLowerCase().replace(/\s+/g, "-")==params.id2)[0]
- const canonicalUrl = `https://vijyapana.com/services/${params.id}/${params.id2}`;
-    console.log(canonicalUrl)
+
   
   return (
     <>
-    <Head>
-        <link rel="canonical" href={canonicalUrl} />
-    </Head>
+
      <div
                 style={{
                     backgroundImage: `url('${allservices?.bgImage}')`,
