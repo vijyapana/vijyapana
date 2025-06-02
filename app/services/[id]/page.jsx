@@ -1,6 +1,8 @@
 import React from "react";
 import { getServices } from "@/lib/contentful";
 import ServicePageClient from "./ServicePageClient";
+import Head from "next/head";
+
 
 export async function generateStaticParams() {
     const services = await getServices();
@@ -12,11 +14,16 @@ export async function generateStaticParams() {
 }
 
 export default async function ServicePage({ params }) {
+    const canonicalUrl = `https://vijyapana.com/services/${params.id}/`;
     const services = await getServices();
     const service = services.find(
     (s) => s.name.toLowerCase().replace(/\s+/g, "-") === params.id
   );
 
     
-    return <ServicePageClient service={service} />;
+    return <>
+     <Head>
+        <link rel="canonical" href={canonicalUrl} />
+    </Head>
+    <ServicePageClient service={service} /></>;
 }
