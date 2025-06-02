@@ -2,6 +2,7 @@ import React from 'react';
 import { footerConfig } from '@/lib/footerConfig';
 import { FaGift,FaPrint, FaPaintBrush, FaMicrophone, FaCameraRetro, FaCode } from 'react-icons/fa';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const serviceIcons = {
   "Corporate Gifts": FaGift,
