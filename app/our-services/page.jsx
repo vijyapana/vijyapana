@@ -1,6 +1,7 @@
 import React from 'react';
 import { footerConfig } from '@/lib/footerConfig';
 import { FaGift,FaPrint, FaPaintBrush, FaMicrophone, FaCameraRetro, FaCode } from 'react-icons/fa';
+import Head from 'next/head';
 
 const serviceIcons = {
   "Corporate Gifts": FaGift,
@@ -13,6 +14,10 @@ const serviceIcons = {
 
 function Page() {
   return (
+    <>
+    <Head>
+      <link rel="canonical" href="https://vijyapana.com/our-services/" />
+    </Head>
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl mt-24 md:mt-20 font-bold text-center mb-12">Our Services</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -34,6 +39,7 @@ function Page() {
         })}
       </div>
     </div>
+  </>
   );
 }
 
