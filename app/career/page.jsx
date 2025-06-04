@@ -1,3 +1,4 @@
+
 "use client"
 import Form from "@/components/applicationForm";
 import {getOpenings} from "@/lib/contentful"

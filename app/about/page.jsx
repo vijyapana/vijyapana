@@ -1,6 +1,15 @@
 
 import React from 'react'
+export async function generateMetadata({ params }) {
+  const canonicalUrl = `https://vijyapana.com/about`;
 
+  return {
+    
+    alternates: {
+      canonical: canonicalUrl,
+    },
+  };
+}
 function page() {
   return (
     <>

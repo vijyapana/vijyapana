@@ -5,6 +5,7 @@ import Container from '@/components/container'
 import { getBlogPosts } from '@/lib/contentful'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+
 function page() {
   const [posts,setPosts] = useState([]);
   useEffect(()=>{
