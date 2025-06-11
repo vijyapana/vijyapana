@@ -15,7 +15,7 @@ function Index() {
           <p className='text-gray-600 text-sm leading-relaxed'>{aboutUs.description}</p>
         </div>        {/* Important Links */}
         <div className='md:col-span-2'>
-          <h3 className='text-lg font-semibold mb-4'>{importantLinks.title}</h3>
+          <h2 className='text-lg font-semibold mb-4'>{importantLinks.title}</h2>
           <ul className='space-y-2'>
             {importantLinks.links.map((link, index) => (
               <li key={index}>
@@ -27,19 +27,19 @@ function Index() {
           </ul>
         </div>        {/* Our Products */}
         <div className='md:col-span-3'>
-          <h3 className='text-lg font-semibold mb-4'>{ourProducts.title}</h3>
+          <h2 className='text-lg font-semibold mb-4'>{ourProducts.title}</h2>
           <ul className='grid grid-cols-1 gap-x-4 gap-y-2'>
             {ourProducts.links.map((link, index) => (
-              <li key={index}>
+              <h3 key={index}>
                 <Link href={link.href} className='text-gray-600 hover:text-gray-900 text-sm transition-colors duration-200'>
                   {link.name}
                 </Link>
-              </li>
+              </h3>
             ))}
           </ul>
         </div>        {/* Contact Us */}
         <div className='md:col-span-3'>
-          <h3 className='text-lg font-semibold mb-4'>{contactUs.title}</h3>
+          <h2 className='text-lg font-semibold mb-4'>{contactUs.title}</h2>
           <div className='space-y-2 text-sm text-gray-600'>
             <p className='flex items-center gap-2'>
               <FaMapMarkerAlt className='flex-shrink-0' />
