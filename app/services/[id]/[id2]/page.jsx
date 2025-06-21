@@ -47,7 +47,8 @@ async function page({params}) {
      <div
                 style={{
                     backgroundImage: `url('${allservices?.bgImage}')`,
-                    backgroundSize: "contain",
+                    backgroundSize: "cover",
+                    backgroundPosition:"center"
                 }}
                 className="mt-24 md:mt-16 h-[40vh] relative flex items-center justify-center text-white"
             >
