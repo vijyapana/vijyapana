@@ -12,10 +12,25 @@ const montserrat = Montserrat({
   style: 'normal',      // Define style (e.g., 'normal', 'italic')
 });
 
+const keywords = [
+  "corporate gifting experts",
+  "corporate gifting company India",
+  "branding company",
+  "advertising services",
+  "branding agency India",
+  "video production",
+  "promotional gifts",
+  "product photography",
+  "promotional gifts supplier India",
+  "custom corporate gifts India",
+  "Unique Gifting Company kanpur"
+];
+
 
 export const metadata = {
-  title: "Vijyapana Advertisements",
+  title: "Contact Vijyapana Advertisements | Corporate Gifting & Media Services",
   description: "Vijyapana Advertisements offers expert video production, product photography, audiobook creation, and print media solutions to enhance brand visibility. Specializing in corporate gifts and social media creatives, Vijyapana delivers customized advertising services that captivate audiences. Our professional team ensures high-quality visuals and impactful content. Choose Vijyapana to elevate your brand and make a lasting impression.",
+  keywords, 
   verification: {
     google: "EAOEEjXQdyVLoqctE_VsO87nE34oJj6SjyKq2WN-nhU",
   }

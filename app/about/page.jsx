@@ -1,10 +1,10 @@
-
 import React from 'react'
 export async function generateMetadata({ params }) {
   const canonicalUrl = `https://vijyapana.com/about`;
 
   return {
-    
+    title:"About Us | Vijyapana – Your Partner for Creative Gifting & Advertising",
+    description:"Get to know Vijyapana — a trusted team offering premium corporate gifts, branding solutions, and innovative advertising to help businesses grow.",
     alternates: {
       canonical: canonicalUrl,
     },

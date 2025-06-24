@@ -3,12 +3,24 @@ import { footerConfig } from '@/lib/footerConfig';
 import { FaGift,FaPrint, FaPaintBrush, FaMicrophone, FaCameraRetro, FaCode } from 'react-icons/fa';
 export async function generateMetadata({ params }) {
   const canonicalUrl = `https://vijyapana.com/our-services`;
+const keywords = [
+  "corporate gifting",
+  "branding services",
+  "advertising solutions",
+  "product photography",
+  "video production",
+  "print media",
+  "creative services",
+  "Vijyapana services"
+];
 
   return {
-    
+    title:"Our Services | Creative Branding, Gifting & Media Solutions – Vijyapana",
+    description:"Vijyapana offers complete services, including custom corporate gifts, creative branding, quality product photography, video ads, and print marketing support.",
     alternates: {
       canonical: canonicalUrl,
     },
+    keywords
   };
 }
 import Link from 'next/link';

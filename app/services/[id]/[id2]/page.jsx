@@ -39,11 +39,8 @@ async function page({params}) {
   
   const allservices = services.filter((s)=>s.name.toLowerCase().split(" ")[0]==params.id)[0]
   const subservice = allservices.subservices.filter((s)=>s.name.toLowerCase().replace(/\s+/g, "-")==params.id2)[0]
-
-  
   return (
     <>
-
      <div
                 style={{
                     backgroundImage: `url('${allservices?.bgImage}')`,
