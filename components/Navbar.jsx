@@ -93,7 +93,7 @@ function Navbar() {
       </ul>
         </div>
         <header className='flex justify-center items-center md:-translate-x-[8rem]'>
-        <p className='text-3xl sm:text-3xl font-[600] tracking-widest text-[#353535]'><Link href={"/"}> VIJYAPANA</Link></p>
+        <p className='text-3xl sm:text-3xl font-[600] tracking-widest text-[#353535]'><Link href={"/"}> TESTING</Link></p>
         </header>
         <div className='hidden md:block'>
         <div className="right flex gap-x-4">
