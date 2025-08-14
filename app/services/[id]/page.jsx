@@ -7,7 +7,6 @@ export async function generateMetadata({ params }) {
   const canonicalUrl = `https://vijyapana.com/services/${params.id}/`;
 
   return {
-    
     alternates: {
       canonical: canonicalUrl,
     },
